@@ -34,7 +34,7 @@ public class HelloController {
         if(pracownik!=null){
             errorLabel.setText("");
             if(pracownik.isAdmin()){
-                
+
             }
 
         }
