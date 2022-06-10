@@ -28,7 +28,7 @@ public class DatabaseConnection {
                 PreparedStatement ps = connection.prepareStatement("SELECT * FROM pracownicy");
                 ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
-                    workers.add(new Pracownik(rs.getString("imie"),rs.getString("nazwisko"),rs.getString("login"),rs.getString("haslo"),rs.getBoolean("isAdmin")));
+                    workers.add(new Pracownik(rs.getInt("idPracownika"),rs.getString("imie"),rs.getString("nazwisko"),rs.getString("login"),rs.getString("haslo"),rs.getBoolean("isAdmin")));
             }
         } catch (SQLException e) {
             e.printStackTrace();

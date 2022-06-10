@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.AddUController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.ChangeUController">
    <children>
       <HBox>
          <children>
@@ -21,10 +21,10 @@
                   <Label layoutX="14.0" layoutY="98.0" text="Imie" />
                   <TextField fx:id="nameText" layoutX="14.0" layoutY="115.0" />
                   <TextField fx:id="surnameText" layoutX="253.0" layoutY="115.0" />
-                  <Button fx:id="button" layoutX="188.0" layoutY="200.0" mnemonicParsing="false" onAction="#addUser" text="Dodaj" />
+                  <Button fx:id="button" layoutX="188.0" layoutY="200.0" mnemonicParsing="false" onAction="#changeUser" text="Zmień" />
                   <Label layoutX="255.0" layoutY="98.0" text="Nazwisko" />
-                  <Label fx:id="doneLabel" layoutX="147.0" layoutY="234.0" text="Dodawanie powiodło się" textFill="#37bc23" visible="false" />
-                  <Label fx:id="errorLabel" layoutX="138.0" layoutY="251.0" text="Dodawanie nie powiodło się" textFill="RED" visible="false" />
+                  <Label fx:id="doneLabel" layoutX="158.0" layoutY="231.0" text="Zmiana powiodła się" textFill="#18ae2c" visible="false" />
+                  <Label fx:id="errorLabel" layoutX="149.0" layoutY="256.0" text="Zmiana nie powiodła się" textFill="#fc0000" visible="false" />
                </children>
             </AnchorPane>
          </children>

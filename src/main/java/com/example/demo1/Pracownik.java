@@ -1,6 +1,7 @@
 package com.example.demo1;
 
 public class Pracownik {
+    private int id;
     private String imie;
     private String nazwisko;
     private String login;
@@ -16,6 +17,19 @@ public class Pracownik {
         this.haslo = haslo;
         this.isAdmin = isAdmin;
     }
+
+    public Pracownik(int id,String imie, String nazwisko, String login, String haslo, boolean isAdmin) {
+        this.id=id;
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+        this.login = login;
+        this.haslo = haslo;
+        this.isAdmin = isAdmin;
+    }
+
+    public int getId() {return id;}
+
+    public void setId(int id) {this.id = id;}
 
     public String getImie() {
         return imie;

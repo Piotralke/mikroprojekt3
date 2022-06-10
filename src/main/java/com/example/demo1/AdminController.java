@@ -34,12 +34,12 @@ public class AdminController {
 
     @FXML
     public void switchToList(ActionEvent event) throws IOException{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("userList.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("list.fxml"));
         root=loader.load();
         ListController listController = loader.getController();
         Node n = (Node)event.getSource();
         String id = n.getId();
-        listController.init(id);
+        listController.init(id, connection);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

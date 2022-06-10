@@ -27,7 +27,7 @@ public class AddOController {
         if(!workersL.isEmpty()){
             for(Pracownik pracownik : workersL){
                 if(!pracownik.isAdmin())
-                    workers.getItems().add(pracownik.getImie()+" "+pracownik.getNazwisko());
+                    workers.getItems().add(pracownik.getId()+" "+pracownik.getImie()+" "+pracownik.getNazwisko());
             }
         }
     }
