@@ -15,7 +15,7 @@
          <children>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Label layoutX="144.0" layoutY="27.0" text="PDJD społka z o.o.">
+                  <Label layoutX="144.0" layoutY="27.0" text="PDJD spółka z o.o.">
                      <font>
                         <Font name="Arial Black" size="32.0" />
                      </font>
@@ -31,7 +31,7 @@
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
                   <PasswordField fx:id="passwordText" layoutX="226.0" layoutY="17.0" />
-                  <Label fx:id="password" layoutX="226.0" text="hasło" />
+                  <Label layoutX="226.0" text="hasło" />
                   <Label fx:id="errorLabel" layoutX="250.0" layoutY="55.0" textFill="RED" />
                </children>
             </AnchorPane>
