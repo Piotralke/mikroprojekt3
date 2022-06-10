@@ -25,9 +25,9 @@ public class AddOController {
         connection=connection2;
         List<Pracownik> workersL = DatabaseConnection.getWorkers(connection);
         if(!workersL.isEmpty()){
-            for(Pracownik pracownik : workersL){
-                if(!pracownik.isAdmin())
-                    workers.getItems().add(pracownik.getId()+" "+pracownik.getImie()+" "+pracownik.getNazwisko());
+            for(Pracownik worker : workersL){
+                if(!worker.isAdmin())
+                    workers.getItems().add(worker.getId()+" "+worker.getImie()+" "+worker.getNazwisko());
             }
         }
     }
@@ -39,7 +39,10 @@ public class AddOController {
 
     @FXML
     protected void goBack(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("panelAdmin.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("panelAdmin.fxml"));
+        root=loader.load();
+        AdminController adminController = loader.getController();
+        adminController.init(connection);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

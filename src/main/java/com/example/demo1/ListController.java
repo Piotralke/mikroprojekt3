@@ -73,7 +73,10 @@ public class ListController {
 
     @FXML
     protected void goBack(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("panelAdmin.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("panelAdmin.fxml"));
+        root=loader.load();
+        AdminController adminController = loader.getController();
+        adminController.init(connection);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

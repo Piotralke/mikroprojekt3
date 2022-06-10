@@ -36,4 +36,25 @@ public class DatabaseConnection {
 
         return workers;
     }
+
+    static boolean addWorker(Connection connection,  String login, String password, String name, String surname){
+        List<Pracownik> workers=getWorkers(connection);
+        for(Pracownik worker : workers){
+            if(login.equals(worker.getLogin())){
+                return false;
+            }
+        }
+        String query = " insert into pracownicy (`imie`, `nazwisko`, `login`, `haslo`, `isAdmin`)"
+                + " values ("+name+","+surname+","+login+","+password+","+0+")";
+        try(
+                PreparedStatement preparedStatement = connection.prepareStatement(query);
+                preparedStatement.executeUpdate();//nie rozumiem xD
+        ) {
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        return true;
+    }
 }
