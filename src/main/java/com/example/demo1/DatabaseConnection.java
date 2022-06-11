@@ -44,17 +44,20 @@ public class DatabaseConnection {
                 return false;
             }
         }
-        String query = " insert into pracownicy (`imie`, `nazwisko`, `login`, `haslo`, `isAdmin`)"
-                + " values ("+name+","+surname+","+login+","+password+","+0+")";
+        String query = " insert into pracownicy (imie, nazwisko, login, haslo, isAdmin)"
+                + " values (?, ?, ?, ?, ?)";
         try(
-                PreparedStatement preparedStatement = connection.prepareStatement(query);
-                preparedStatement.executeUpdate();//nie rozumiem xD
-        ) {
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+                PreparedStatement preparedStatement = connection.prepareStatement(query)){
+            preparedStatement.setString (1, name);
+            preparedStatement.setString (2, surname);
+            preparedStatement.setString   (3, login);
+            preparedStatement.setString(4, password);
+            preparedStatement.setInt    (5, 0);
+            preparedStatement.executeUpdate();
         }
-
-
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
         return true;
     }
 }
