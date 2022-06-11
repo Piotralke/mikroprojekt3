@@ -10,14 +10,6 @@ public class Pracownik {
 
     public Pracownik(){}
 
-    public Pracownik(String imie, String nazwisko, String login, String haslo, boolean isAdmin) {
-        this.imie = imie;
-        this.nazwisko = nazwisko;
-        this.login = login;
-        this.haslo = haslo;
-        this.isAdmin = isAdmin;
-    }
-
     public Pracownik(int id,String imie, String nazwisko, String login, String haslo, boolean isAdmin) {
         this.id=id;
         this.imie = imie;

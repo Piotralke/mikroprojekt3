@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -31,11 +32,37 @@ public class AddUController {
     private Label doneLabel;
     @FXML
     private Label errorLabel;
+    @FXML
+    private Button button;
+    private boolean checkLogin;
+    private boolean checkName;
+    private boolean checkSurname;
+    private boolean checkPassword;
 
     public void init(Connection connection2){
+        check();
         connection=connection2;
+        loginText.textProperty().addListener((observable, oldValue, newValue) -> {
+            checkLogin= !newValue.trim().isEmpty();
+            check();
+        });
+        passwordText.textProperty().addListener((observable, oldValue, newValue) -> {
+            checkPassword= !newValue.trim().isEmpty();
+            check();
+        });
+        nameText.textProperty().addListener((observable, oldValue, newValue) -> {
+            checkName=!newValue.trim().isEmpty();
+            check();
+        });
+        surnameText.textProperty().addListener((observable, oldValue, newValue) -> {
+            checkSurname=!newValue.trim().isEmpty();
+            check();
+        });
     }
 
+    private void check(){
+        button.setDisable(!checkName || !checkLogin || !checkSurname || !checkPassword);
+    }
     @FXML
     protected void addUser(){
         if(DatabaseConnection.addWorker(connection,loginText.getText(), passwordText.getText(), nameText.getText(), surnameText.getText())){

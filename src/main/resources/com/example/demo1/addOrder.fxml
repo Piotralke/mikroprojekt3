@@ -3,12 +3,13 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.AddOController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.AddOController">
    <children>
       <HBox>
          <children>
@@ -16,13 +17,15 @@
             <AnchorPane prefHeight="400.0" prefWidth="505.0">
                <children>
                   <TextField fx:id="titleText" layoutX="14.0" layoutY="48.0" />
-                  <TextField fx:id="descriptionText" layoutX="253.0" layoutY="48.0" />
-                  <ChoiceBox fx:id="workers" layoutX="14.0" layoutY="115.0" prefWidth="150.0" />
+                  <ChoiceBox fx:id="workers" layoutX="253.0" layoutY="48.0" prefWidth="150.0" />
                   <Label layoutX="14.0" layoutY="31.0" text="Tytuł" />
-                  <Label layoutX="253.0" layoutY="31.0" text="Opis" />
-                  <Label layoutX="14.0" layoutY="98.0" text="Pracownik" />
-                  <Button fx:id="button" layoutX="188.0" layoutY="175.0" mnemonicParsing="false" onAction="#addOrder" text="Dodaj" />
+                  <Label layoutX="15.0" layoutY="81.0" text="Opis" />
+                  <Label layoutX="253.0" layoutY="31.0" text="Pracownik" />
+                  <TextArea fx:id="descriptionText" layoutX="14.0" layoutY="98.0" prefHeight="139.0" prefWidth="392.0" />
+                  <Button fx:id="button" layoutX="186.0" layoutY="258.0" mnemonicParsing="false" onAction="#addOrder" text="Dodaj" />
                   <Label layoutX="159.0" layoutY="14.0" text="Nowe zlecenie" />
+                  <Label fx:id="doneLabel" layoutX="145.0" layoutY="291.0" text="Dodawanie powiodło się" textFill="#28c32d" visible="false" />
+                  <Label fx:id="errorLabel" layoutX="136.0" layoutY="314.0" text="Dodawanie nie powiodło się" textFill="RED" visible="false" />
                </children>
             </AnchorPane>
          </children>

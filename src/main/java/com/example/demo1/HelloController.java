@@ -59,7 +59,7 @@ public class HelloController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("panelUser.fxml"));
         root=loader.load();
         UserController userController = loader.getController();
-        //userController.init(connection);
+        userController.init(connection,pracownik);
         stage = (Stage)loginText.getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

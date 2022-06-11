@@ -27,30 +27,23 @@ public class ListController {
         listView.getItems().clear();
         connection=connection2;
         List<Pracownik> workersL = DatabaseConnection.getWorkers(connection);
-        if(id.equals("deleteO")){
-
-        }else{
-
             if(!workersL.isEmpty()){
                 for(Pracownik pracownik : workersL){
                     if(!pracownik.isAdmin())
                         listView.getItems().add(pracownik.getId()+" "+pracownik.getImie()+" "+pracownik.getNazwisko());
                 }
             }
-        }
         listView.setOnMouseClicked(event -> {
             if(event.getClickCount()==2)
             {
                 try {
                     switch (id) {
-                        case "deleteO":
-                           // switchToTransactions(loginT);
-                            break;
                         case "editU":
                             switchToChanges(workersL.get(listView.getSelectionModel().getSelectedIndex()+1));
                             break;
                         case "deleteU":
-                            //switchToCreditAccept(loginT);
+                            if(DatabaseConnection.deleteUser(connection,workersL.get(listView.getSelectionModel().getSelectedIndex()+1).getId()))
+                                init(id,connection);
                             break;
                     }
                 }catch (IOException e) {
@@ -70,6 +63,7 @@ public class ListController {
         stage.setScene(scene);
         stage.show();
     }
+
 
     @FXML
     protected void goBack(ActionEvent event) throws IOException {

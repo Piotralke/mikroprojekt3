@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.PropertiesController">
+    <children>
+        <Button fx:id="back" mnemonicParsing="false" onAction="#goBack" text="Powrót" />
+        <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Label layoutX="35.0" layoutY="122.0" text="Opis">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Label fx:id="dateText" layoutX="418.0" layoutY="2.0" text="Data utworzenia zlecenia">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="titleText" layoutX="33.0" layoutY="49.0" text="Tytuł">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Label fx:id="statusText" layoutX="307.0" layoutY="52.0" text="Status">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="startB" disable="true" layoutX="480.0" layoutY="79.0" mnemonicParsing="false" onAction="#start" text="Zacznij" visible="false" />
+            <Button fx:id="endB" disable="true" layoutX="476.0" layoutY="110.0" mnemonicParsing="false" onAction="#end" text="Zakończ" visible="false" />
+            <TextArea fx:id="descriptionText" layoutX="33.0" layoutY="152.0" prefHeight="200.0" prefWidth="396.0" />
+         </children>
+        </AnchorPane>
+    </children>
+</VBox>
